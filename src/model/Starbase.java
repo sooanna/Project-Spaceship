@@ -41,13 +41,6 @@ public final class Starbase implements Combatant {
         return Collections.unmodifiableList(dockedShips);
     }
 
-    // (Optional) still useful for App logging if you want it
-    public List<String> getDockedShipNames() {
-        List<String> names = new ArrayList<>();
-        for (Starship s : dockedShips) names.add(s.getName());
-        return names;
-    }
-
     void addDockedShip(Starship s) { dockedShips.add(s); }
     void removeDockedShip(Starship s) { dockedShips.remove(s); }
 
@@ -70,5 +63,12 @@ public final class Starbase implements Combatant {
             }
             dockedShips.clear();
         }
+    }
+
+    // used just for logging in the App.java
+    public List<String> getDockedShipNames() {
+        List<String> names = new ArrayList<>();
+        for (Starship s : dockedShips) names.add(s.getName());
+        return names;
     }
 }
